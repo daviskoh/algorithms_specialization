@@ -8,7 +8,7 @@ import (
 
 // (10*n)*ac + (10^(n/2))*(ad + bc) + bd
 
-func Karatsuba(x, y big.Int) *big.Int {
+func Karatsuba(x, y *big.Int) *big.Int {
 	a, _ := new(big.Int).SetString(x.String()[0:2], 10)
 	b, _ := new(big.Int).SetString(x.String()[2:4], 10)
 

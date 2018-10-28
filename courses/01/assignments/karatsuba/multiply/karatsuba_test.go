@@ -15,14 +15,14 @@ var _ = Describe("Karatsuba", func() {
 
 		x.SetString("5678", 10)
 		y.SetString("1234", 10)
-		Expect(Karatsuba(x, y).String()).To(Equal("7006652"))
+		Expect(Karatsuba(&x, &y).String()).To(Equal("7006652"))
 
 		x.SetString("2233", 10)
 		y.SetString("4455", 10)
-		Expect(Karatsuba(x, y).String()).To(Equal("9948015"))
+		Expect(Karatsuba(&x, &y).String()).To(Equal("9948015"))
 
 		x.SetString("1423", 10)
 		y.SetString("5867", 10)
-		Expect(Karatsuba(x, y).String()).To(Equal("8348741"))
+		Expect(Karatsuba(&x, &y).String()).To(Equal("8348741"))
 	})
 })
