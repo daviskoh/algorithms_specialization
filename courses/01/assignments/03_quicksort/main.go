@@ -39,6 +39,6 @@ func readFile(fname string) (nums []int, err error) {
 func main() {
 	integers, _ := readFile("integers.txt")
 
-	_, count := sort.Sort(integers)
+	_, count := sort.Sort(integers, sort.ChoosePivotIndex)
 	fmt.Println(count)
 }

@@ -64,23 +64,23 @@ var _ = Describe("QuickSort", func() {
 
 		It("handles base case", func() {
 			a = []int{1}
-			resp, _ = Sort(a)
+			resp, _ = Sort(a, ChoosePivotIndex)
 			Expect(resp).To(Equal([]int{1}))
 		})
 
 		It("handles simple case", func() {
 			a = []int{2, 1}
-			resp, _ = Sort(a)
+			resp, _ = Sort(a, ChoosePivotIndex)
 			Expect(resp).To(Equal([]int{1, 2}))
 		})
 
 		It("handles complex cases", func() {
 			a = []int{1, 3, 2}
-			resp, _ = Sort(a)
+			resp, _ = Sort(a, ChoosePivotIndex)
 			Expect(resp).To(Equal([]int{1, 2, 3}))
 
 			a = []int{1, 7, 2, 5, 3, 4, 8, 6}
-			resp, _ = Sort(a)
+			resp, _ = Sort(a, ChoosePivotIndex)
 			sorted = make([]int, len(a))
 			copy(sorted, a)
 			sort.Slice(sorted, func(i int, j int) bool {
@@ -89,7 +89,7 @@ var _ = Describe("QuickSort", func() {
 			Expect(resp).To(Equal(sorted))
 
 			a = []int{10, 5, 6, 4, 2, 7, 8, 9, 11, 14, 1}
-			resp, _ = Sort(a)
+			resp, _ = Sort(a, ChoosePivotIndex)
 			sorted = make([]int, len(a))
 			copy(sorted, a)
 			sort.Slice(sorted, func(i int, j int) bool {
@@ -100,11 +100,11 @@ var _ = Describe("QuickSort", func() {
 
 		XIt("returns comparisons count", func() {
 			a = []int{1, 3, 2}
-			_, comparisons = Sort(a)
+			_, comparisons = Sort(a, ChoosePivotIndex)
 			Expect(comparisons).To(Equal(3))
 
 			a = []int{4, 5, 6, 3}
-			_, comparisons = Sort(a)
+			_, comparisons = Sort(a, ChoosePivotIndex)
 			Expect(comparisons).To(Equal(4))
 		})
 	})
